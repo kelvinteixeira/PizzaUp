@@ -5,13 +5,16 @@ import { Link } from 'react-router-dom'
 export default function Header() {
   return (
     <>
-      <div className="topnav">
-        <Link className="links" to="/sobre">Sobre</Link>
-        <Link className="links" to="/contato">Contato</Link>
-        <Link className="links" to="/pedidos">Delivery</Link>
-        <Link className="links active" to="/">Home</Link>
+      <div className="container">
+        <div className="topnav">
+          <Link className="links" to="/">Home</Link>
+          <Link className="links" to="/cardapio">Cardápio</Link>
+          <Link className="links" to="/pedidos">Delivery</Link>
+          <Link className="links" to="/contato">Contato</Link>
+          <Link className="links" to="/sobre">Sobre</Link>
+        </div>
+        <hr />
       </div>
-      <hr />
     </>
   )
 }

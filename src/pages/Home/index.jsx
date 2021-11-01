@@ -6,7 +6,6 @@ import './style.css'
 export default function Home() {
   return (
     <>
-      <h1>Home funcionando</h1>
       <Header />
       <Footer />
     </>
