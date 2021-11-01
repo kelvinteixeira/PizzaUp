@@ -1,10 +1,10 @@
 import React from 'react'
 import Header from '../../components/Header'
 
-export default function Pedidos() {
+export default function Sobre() {
   return (
     <>
-      <h1>Página de pedidos funcionando</h1>
+      <h1>Página de Sobre funcionando</h1>
       <Header />
     </>
   )
