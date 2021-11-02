@@ -2,13 +2,12 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
 body {
   background-color: #6e0f0f;
+  background-image: url(./images/carrossel3.jpg);
+  background-size: cover;
 }
 
-img {
-  width: 100vw;
-  height: 99vh;
-}
