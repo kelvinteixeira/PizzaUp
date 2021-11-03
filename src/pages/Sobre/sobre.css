@@ -1,0 +1,11 @@
+.sobre {
+  width: 740px;
+}
+
+.descricao-sobre {
+  font-size: 14px;
+  margin: 26px;
+  color: #ffb001;
+  font-weight: bold;
+  text-align: left;
+}
