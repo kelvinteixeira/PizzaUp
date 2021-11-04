@@ -7,6 +7,7 @@ import refrigerantes from '../../interfaces/refrigerantes'
 import bordas from '../../interfaces/bordas'
 
 export default function Card() {
+  
 
   const getPizzas = () => {
     return pizzas.map(item => {

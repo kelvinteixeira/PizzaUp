@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 .card-container {
   display: flex;
   flex-direction: row;
@@ -65,10 +66,27 @@
 }
 
 .campo {
-  border-radius: 8px;
   font-weight: bold;
-  color: black;
-  padding: 3px 0 3px 10px;
+  color: white;
+  padding: 3px 0 3px 0;
   outline: 0;
   border: 0;
+  background: transparent;
+  border-bottom: solid 1px;
+  font-family: "Roboto", sans-serif;
 }
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+option {
+  background-color: #6b2d2d;
+  font-weight: bold;
+}
+
+option:disabled {
+  color: #ffb001;
+  font-weight: bold;
+}
+
