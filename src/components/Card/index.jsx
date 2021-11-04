@@ -2,9 +2,9 @@ import React from 'react'
 import './card.css'
 
 
-import pizzas from '../../pizzas'
-import refrigerantes from '../../refrigerantes'
-import bordas from '../../bordas'
+import pizzas from '../../interfaces/pizzas'
+import refrigerantes from '../../interfaces/refrigerantes'
+import bordas from '../../interfaces/bordas'
 
 export default function Card() {
 

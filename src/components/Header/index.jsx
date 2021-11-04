@@ -7,10 +7,11 @@ export default function Header() {
     <>
       <div className="container">
         <div className="topnav">
+          <Link className="links" to="/carrinho">Carrinho</Link>
           <Link className="links" to="/sobre">Sobre</Link>
           <Link className="links" to="/contato">Contato</Link>
-          <Link className="links" to="/pedidos">Delivery</Link>
-          <Link className="links" to="/">Home</Link>
+          <Link className="links" to="/pedidos">Pedido</Link>
+          <Link className="links" to="/">Cardápio</Link>
         </div>
         <hr />
       </div>
