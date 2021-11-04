@@ -3,7 +3,11 @@
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
-  
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }
 
 .card {
@@ -15,12 +19,12 @@
   transition: ease-in-out 0.4s;
   box-shadow: 1px 2px 5px 3px;
   overflow: scroll;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
 ::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
 }
 
 .card:hover {
@@ -33,6 +37,14 @@
   margin: 26px;
   font-weight: bold;
   color: white;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+  color: #ffb001;
+  font-weight: bold;
 }
 
 .sabores {
@@ -50,4 +62,13 @@
 .valor {
   color: white;
   font-size: 14px;
+}
+
+.campo {
+  border-radius: 8px;
+  font-weight: bold;
+  color: black;
+  padding: 3px 0 3px 10px;
+  outline: 0;
+  border: 0;
 }
