@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
 .card-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -21,6 +23,10 @@
   box-shadow: 1px 2px 5px 3px;
   overflow: scroll;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
 }
 
 ::-webkit-scrollbar {
@@ -44,6 +50,7 @@
   display: flex;
   flex-direction: column;
   padding: 0 30px;
+  justify-content: center;
   color: #ffb001;
   font-weight: bold;
 }
@@ -90,3 +97,19 @@ option:disabled {
   font-weight: bold;
 }
 
+.card-button {
+  width: auto;
+  padding: 5px;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 0;
+  font-weight: bold;
+  background-color: #6e0f0f;
+  color: #ffb001;
+  transition: ease-in-out 0.4s;
+}
+
+.card-button:hover {
+  color: #fff;
+}

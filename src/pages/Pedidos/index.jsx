@@ -63,15 +63,15 @@ export default function Pedidos() {
     }
   }
 
-  const enviar = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
   }
 
   return (
     <>
       <Header />
-      <form>
-        <div className="card-container">
+      <div className="card-container">
+        <form>
           <div className="card">
             <h1 className="card-titulo">Pedido</h1>
             <div className="card-content">
@@ -113,8 +113,13 @@ export default function Pedidos() {
               <label htmlFor="obs">Observações</label>
               <input value={obs} onChange={e => setObs(e.target.value)} type="text" className="campo" placeholder="ex: não colocar cebolas..."></input>
 
+              <button className="card-button" type="submit" onClick={handleSubmit}>Adicionar ao carrinho</button>
+
             </div>
           </div>
+        </form>
+
+        <form>
 
           <div className="card">
             <h1 className="card-titulo">Informações do cliente</h1>
@@ -137,10 +142,11 @@ export default function Pedidos() {
               <label htmlFor="referencia">Ponto de referência</label>
               <input type="text" value={referencia} onChange={e => setReferencia(e.target.value)} autoComplete='off' className="campo" id="referencia" placeholder="ex: próximo ao supermecado..."></input>
 
+              <button className="card-button" type="submit" onClick={handleSubmit}>Adicionar ao carrinho</button>
             </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
       <Footer />
     </>
   )
