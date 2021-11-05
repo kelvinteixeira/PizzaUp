@@ -25,13 +25,11 @@
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  justify-content: center;
 }
 
 ::-webkit-scrollbar {
   width: 0px;
-  background: transparent; /* make scrollbar transparent */
+  background: transparent; 
 }
 
 .card:hover {
@@ -57,7 +55,7 @@
 
 .sabores {
   font-size: 18px;
-  margin: 26px;
+  margin: 0 20px 10px 26px;
   color: #ffb001;
   font-weight: bold;
 }
@@ -81,6 +79,7 @@
   background: transparent;
   border-bottom: solid 1px;
   font-family: "Roboto", sans-serif;
+  margin: 2px;
 }
 
 ::-webkit-input-placeholder {

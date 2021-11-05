@@ -13,7 +13,6 @@ export default function Pedidos() {
   const [nome, setNome] = useState('')
   const [telefone, setTelefone] = useState('')
   const [rua, setrua] = useState('')
-  const [numero, setNumero] = useState('')
   const [bairro, setBairro] = useState('')
   const [referencia, setReferencia] = useState('')
 
@@ -46,17 +45,17 @@ export default function Pedidos() {
   const tipoPizza = () => {
     if (tipo === '1sabor') {
       return <select value={sabor} onChange={e => setSabor(e.target.value)} className="campo" >
-        <option selected disabled defaultValue="" > Escolha o sabor </option>
+        <option selected disabled value="" > Escolha o sabor </option>
         {getPizzas()}
       </select>
     } else if (tipo === '2sabores') {
       return <div>
         < select value={sabor} onChange={e => setSabor(e.target.value)} className="campo" >
-          <option selected disabled defaultValue="" > Primeiro sabor </option>
+          <option selected disabled value="" > Primeiro sabor </option>
           {getPizzas()}
         </select>
         <select value={sabor2} onChange={e => setSabor2(e.target.value)} className="campo" >
-          <option selected disabled defaultValue="" > Segundo sabor </option>
+          <option selected disable value="" > Segundo sabor </option>
           {getPizzas()}
         </select>
       </div>
@@ -73,7 +72,7 @@ export default function Pedidos() {
       <div className="card-container">
         <form>
           <div className="card">
-            <h1 className="card-titulo">Pedido</h1>
+            <h1 className="card-titulo">Informações do pedido</h1>
             <div className="card-content">
               <label htmlFor="tipo">Tipo de pizza</label>
               <select value={tipo} onChange={e => {
@@ -130,11 +129,8 @@ export default function Pedidos() {
               <label htmlFor="telefone">Telefone</label>
               <input value={telefone} onChange={e => setTelefone(e.target.value)} className="campo" autoComplete='off' type="text" id="telefone"></input>
 
-              <label htmlFor="logradouro">Rua</label>
+              <label htmlFor="logradouro">Rua e número da casa</label>
               <input value={rua} onChange={e => setrua(e.target.value)} className="campo" autoComplete='off' type="text" id="logradouro"></input>
-
-              <label htmlFor="numero">Numero</label>
-              <input value={numero} onChange={e => setNumero(e.target.value)} className="campo" autoComplete='off' type="text" id="numero"></input>
 
               <label htmlFor="bairro">Bairro</label>
               <input value={bairro} onChange={e => setBairro(e.target.value)} className="campo" autoComplete='off' type="text" id="bairro"></input>
@@ -142,7 +138,7 @@ export default function Pedidos() {
               <label htmlFor="referencia">Ponto de referência</label>
               <input type="text" value={referencia} onChange={e => setReferencia(e.target.value)} autoComplete='off' className="campo" id="referencia" placeholder="ex: próximo ao supermecado..."></input>
 
-              <button className="card-button" type="submit" onClick={handleSubmit}>Adicionar ao carrinho</button>
+              <button className="card-button" type="submit" onClick={handleSubmit}>Adicionar informações</button>
             </div>
           </div>
         </form>

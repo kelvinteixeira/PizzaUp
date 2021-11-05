@@ -1,19 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 .card-container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-}
-
-.card-contato {
-  padding: 3px;
-  width: 400px;
-  height: 440px;
-  background-color: #6b2d2d99;
-  border-radius: 8px;
-  transition: ease-in-out 0.4s;
-  box-shadow: 1px 2px 5px 3px;
 }
 
 .card-images {
@@ -22,18 +13,21 @@
   justify-content: center;
 }
 
-.images-logo {
-  height: 100px;
-  cursor: pointer;
+.card-rodapé {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
 }
 
+
 .images-logo {
-  height: 100px;
+  height: 80px;
   cursor: pointer;
 }
 
 .images-logo-phone {
-  height: 100px;
+  height: 60px;
 }
 
 .images-phone {
@@ -43,13 +37,12 @@
   align-items: center;
   padding-top: 20px;
   margin: 40px;
-  background-color: #05030330;
+  background-color: #05030315;
 }
 
 .images-numero {
-  margin-top: 5px;
-  font-size: 30px;
-  color: #ffb001;
-  font-family: 'Dancing Script', cursive;
-  font-weight: bold;
+  margin: 10px;
+  font-size: 26px;
+  color: #fff;
+  font-family: "Roboto", cursive;
 }
