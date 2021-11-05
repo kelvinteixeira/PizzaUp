@@ -9,13 +9,15 @@ import bordas from '../../interfaces/bordas'
 
 export default function Pedidos() {
   const [show, setShow] = useState(false)
-  const [tipo, setTipo] = useState('')
   const [nome, setNome] = useState('')
   const [telefone, setTelefone] = useState('')
   const [rua, setrua] = useState('')
   const [numero, setNumero] = useState('')
   const [bairro, setBairro] = useState('')
   const [referencia, setReferencia] = useState('')
+
+  const [tipo, setTipo] = useState('')
+  const [borda, setBorda] = useState('')
 
   const getPizzas = () => {
     return pizzas.map(item => {
@@ -38,7 +40,7 @@ export default function Pedidos() {
   const tipoPizza = () => {
     if (tipo === 'valor1') {
       return <select className="campo" >
-        <option selected disabled defaultValue="" > Primeiro sabor </option>
+        <option selected disabled defaultValue="" > Escolha o sabor </option>
         {getPizzas()}
       </select>
     } else if (tipo === 'valor2') {
@@ -75,6 +77,30 @@ export default function Pedidos() {
             <div>
               {!show ? tipoPizza() : null}
             </div>
+
+            <label htmlFor="tamanho">Tamanho</label>
+            <select className="campo">
+              <option name="borda" selected disabled value="">Selecione</option>
+              <option name="borda" value="pequena">Pequena</option>
+              <option name="borda" value="media">Média</option>
+              <option name="borda" value="grande">Grande</option>
+            </select>
+
+            <label htmlFor="borda">Tipo de borda</label>
+            <select className="campo">
+              <option  name="borda" selected disabled value="">Selecione</option>
+              {getBordas()}
+            </select>
+
+            <label htmlFor="refrigerante">Adicionar refrigerante</label>
+            <select className="campo">
+              <option name="borda" selected disabled value="">Selecione</option>
+              {getRefrigerantes()}
+            </select>
+
+            <label htmlFor="obs">Observações</label>
+            <input type="text" className="campo" placeholder="ex: não colocar cebolas..."></input> 
+
           </div>
         </div>
 

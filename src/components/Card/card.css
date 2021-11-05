@@ -77,7 +77,7 @@
 }
 
 ::-webkit-input-placeholder {
-  color: white;
+  color: rgb(182, 179, 179);
 }
 
 option {
