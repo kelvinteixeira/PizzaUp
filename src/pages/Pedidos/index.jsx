@@ -9,6 +9,7 @@ import bordas from '../../interfaces/bordas'
 
 export default function Pedidos() {
   const [show, setShow] = useState(false)
+
   const [nome, setNome] = useState('')
   const [telefone, setTelefone] = useState('')
   const [rua, setrua] = useState('')
@@ -17,7 +18,12 @@ export default function Pedidos() {
   const [referencia, setReferencia] = useState('')
 
   const [tipo, setTipo] = useState('')
+  const [sabor, setSabor] = useState('')
+  const [sabor2, setSabor2] = useState('')
+  const [tamanho, setTamanho] = useState('')
   const [borda, setBorda] = useState('')
+  const [refrigerante, setRefrigerante] = useState('')
+  const [obs, setObs] = useState('')
 
   const getPizzas = () => {
     return pizzas.map(item => {
@@ -38,18 +44,18 @@ export default function Pedidos() {
   }
 
   const tipoPizza = () => {
-    if (tipo === 'valor1') {
-      return <select className="campo" >
+    if (tipo === '1sabor') {
+      return <select value={sabor} onChange={e => setSabor(e.target.value)} className="campo" >
         <option selected disabled defaultValue="" > Escolha o sabor </option>
         {getPizzas()}
       </select>
-    } else if (tipo === 'valor2') {
+    } else if (tipo === '2sabores') {
       return <div>
-        < select className="campo" >
+        < select value={sabor} onChange={e => setSabor(e.target.value)} className="campo" >
           <option selected disabled defaultValue="" > Primeiro sabor </option>
           {getPizzas()}
         </select>
-        <select className="campo" >
+        <select value={sabor2} onChange={e => setSabor2(e.target.value)} className="campo" >
           <option selected disabled defaultValue="" > Segundo sabor </option>
           {getPizzas()}
         </select>
@@ -57,77 +63,84 @@ export default function Pedidos() {
     }
   }
 
+  const enviar = (e) => {
+    e.preventDefault()
+  }
+
   return (
     <>
       <Header />
-      <div className="card-container">
-        <div className="card">
-          <h1 className="card-titulo">Pedido</h1>
-          <div className="card-content">
-            <label htmlFor="tipo">Tipo de pizza</label>
-            <select value={tipo} onChange={e => {
-              setTipo(e.target.value)
-              setShow(show)
-            }} className="campo" name="tipo">
-              <option selected disabled value="">Selecione</option>
-              <option value="valor1">1 sabor</option>
-              <option value="valor2" >2 sabores</option>
-            </select>
+      <form>
+        <div className="card-container">
+          <div className="card">
+            <h1 className="card-titulo">Pedido</h1>
+            <div className="card-content">
+              <label htmlFor="tipo">Tipo de pizza</label>
+              <select value={tipo} onChange={e => {
+                setTipo(e.target.value)
+                setShow(show)
+              }} className="campo" name="tipo">
+                <option selected disabled value="">Selecione</option>
+                <option value="1sabor">1 sabor</option>
+                <option value="2sabores" >2 sabores</option>
+              </select>
 
-            <div>
-              {!show ? tipoPizza() : null}
+              <div>
+                {!show ? tipoPizza() : null}
+              </div>
+
+
+              <label htmlFor="tamanho">Tamanho</label>
+              <select value={tamanho} onChange={e => setTamanho(e.target.value)} className="campo">
+                <option selected disabled value="">Selecione</option>
+                <option value="pequena">Pequena</option>
+                <option value="media">Média</option>
+                <option value="grande">Grande</option>
+              </select>
+
+              <label htmlFor="borda">Tipo de borda</label>
+              <select value={borda} onChange={e => setBorda(e.target.value)} className="campo">
+                <option selected disabled value="">Selecione</option>
+                {getBordas()}
+              </select>
+
+              <label htmlFor="refrigerante">Adicionar refrigerante</label>
+              <select value={refrigerante} onChange={e => setRefrigerante(e.target.value)} className="campo">
+                <option selected disabled value="">Selecione</option>
+                {getRefrigerantes()}
+              </select>
+
+              <label htmlFor="obs">Observações</label>
+              <input value={obs} onChange={e => setObs(e.target.value)} type="text" className="campo" placeholder="ex: não colocar cebolas..."></input>
+
             </div>
+          </div>
 
-            <label htmlFor="tamanho">Tamanho</label>
-            <select className="campo">
-              <option name="borda" selected disabled value="">Selecione</option>
-              <option name="borda" value="pequena">Pequena</option>
-              <option name="borda" value="media">Média</option>
-              <option name="borda" value="grande">Grande</option>
-            </select>
+          <div className="card">
+            <h1 className="card-titulo">Informações do cliente</h1>
+            <div className="card-content">
+              <label htmlFor="nome">Nome</label>
+              <input value={nome} onChange={e => setNome(e.target.value)} className="campo" autoComplete='off' type="text" id="nome"></input>
 
-            <label htmlFor="borda">Tipo de borda</label>
-            <select className="campo">
-              <option  name="borda" selected disabled value="">Selecione</option>
-              {getBordas()}
-            </select>
+              <label htmlFor="telefone">Telefone</label>
+              <input value={telefone} onChange={e => setTelefone(e.target.value)} className="campo" autoComplete='off' type="text" id="telefone"></input>
 
-            <label htmlFor="refrigerante">Adicionar refrigerante</label>
-            <select className="campo">
-              <option name="borda" selected disabled value="">Selecione</option>
-              {getRefrigerantes()}
-            </select>
+              <label htmlFor="logradouro">Rua</label>
+              <input value={rua} onChange={e => setrua(e.target.value)} className="campo" autoComplete='off' type="text" id="logradouro"></input>
 
-            <label htmlFor="obs">Observações</label>
-            <input type="text" className="campo" placeholder="ex: não colocar cebolas..."></input> 
+              <label htmlFor="numero">Numero</label>
+              <input value={numero} onChange={e => setNumero(e.target.value)} className="campo" autoComplete='off' type="text" id="numero"></input>
 
+              <label htmlFor="bairro">Bairro</label>
+              <input value={bairro} onChange={e => setBairro(e.target.value)} className="campo" autoComplete='off' type="text" id="bairro"></input>
+
+              <label htmlFor="referencia">Ponto de referência</label>
+              <input type="text" value={referencia} onChange={e => setReferencia(e.target.value)} autoComplete='off' className="campo" id="referencia" placeholder="ex: próximo ao supermecado..."></input>
+
+            </div>
           </div>
         </div>
-
-        <div className="card">
-          <h1 className="card-titulo">Informações do cliente</h1>
-          <div className="card-content">
-            <label htmlFor="nome">Nome</label>
-            <input value={nome} onChange={e => setNome(e.target.value)} className="campo" autoComplete='off' type="text" id="nome"></input>
-
-            <label htmlFor="telefone">Telefone</label>
-            <input value={telefone} onChange={e => setTelefone(e.target.value)} className="campo" autoComplete='off' type="text" id="telefone"></input>
-
-            <label htmlFor="logradouro">Rua</label>
-            <input value={rua} onChange={e => setrua(e.target.value)} className="campo" autoComplete='off' type="text" id="logradouro"></input>
-
-            <label htmlFor="numero">Numero</label>
-            <input value={numero} onChange={e => setNumero(e.target.value)} className="campo" autoComplete='off' type="text" id="numero"></input>
-
-            <label htmlFor="bairro">Bairro</label>
-            <input value={bairro} onChange={e => setBairro(e.target.value)} className="campo" autoComplete='off' type="text" id="bairro"></input>
-
-            <label htmlFor="referencia">Ponto de referência</label>
-            <input type="text" value={referencia} onChange={e => setReferencia(e.target.value)} autoComplete='off' className="campo" id="referencia" placeholder="ex: próximo ao supermecado..."></input>
-
-          </div>
-        </div>
-      </div>
+      </form>
       <Footer />
     </>
   )
