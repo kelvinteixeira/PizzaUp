@@ -10,7 +10,7 @@ import bordas from '../../interfaces/bordas'
 
 export default function Pedidos() {
   const [show, setShow] = useState(false)
-
+  
   const [nome, setNome] = useState('')
   const [telefone, setTelefone] = useState('')
   const [rua, setrua] = useState('')
@@ -24,6 +24,30 @@ export default function Pedidos() {
   const [borda, setBorda] = useState('')
   const [refrigerante, setRefrigerante] = useState('')
   const [obs, setObs] = useState('')
+
+  const enviar = (e) => {
+    e.preventDefault()
+    if (tipo === "Um sabor") {
+      localStorage.setItem("Pedido", JSON.stringify({
+        "tipoDaPizza": tipo,
+        "primeiroSabor": sabor,
+        "tamanho": tamanho,
+        "borda": borda,
+        "refrigerante": refrigerante,
+        "observações": obs
+      }))
+    } else {
+      localStorage.setItem("Pedido", JSON.stringify({
+        "tipoDaPizza": tipo,
+        "primeiroSabor": sabor,
+        "segundoSabor": sabor2,
+        "tamanho": tamanho,
+        "borda": borda,
+        "refrigerante": refrigerante,
+        "observações": obs
+      }))
+    }
+  }
 
   const getPizzas = () => {
     return pizzas.map(item => {
@@ -111,7 +135,7 @@ export default function Pedidos() {
               <label htmlFor="obs">Observações</label>
               <input value={obs} onChange={e => setObs(e.target.value)} type="text" className="campo" placeholder="ex: não colocar cebolas..."></input>
 
-              <button className="card-button" type="button">Adicionar ao carrinho</button>
+              <button className="card-button" type="button" onClick={enviar}>Adicionar ao carrinho</button>
 
             </div>
           </div>

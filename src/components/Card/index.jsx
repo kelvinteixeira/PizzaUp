@@ -11,7 +11,7 @@ export default function Card() {
 
   const getPizzas = () => {
     return pizzas.map(item => {
-      return <div>
+      return <div key={item.id}>
         <ul className="sabores" key={item.id}> {item.nome} <br /> <div className="descricao"> {item.descricao} <div className="valor"> P - {item.valorP} | M - {item.valorM} | G - {item.valorG} </div></div> </ul>
       </div>
     })
@@ -19,7 +19,7 @@ export default function Card() {
 
   const getRefrigerantes = () => {
     return refrigerantes.map(item => {
-      return <div>
+      return <div key={item.id}>
         <ul className="sabores" key={item.id}> {item.nome} <br /> <div className="descricao"> {item.descricao} <div className="valor"> {item.valor} </div></div> </ul>
       </div>
     })
@@ -27,7 +27,7 @@ export default function Card() {
 
   const getBordas = () => {
     return bordas.map(item => {
-      return <div>
+      return <div key={item.id}>
         <ul className="sabores" key={item.id}> {item.nome} <br /> <div className="descricao"> {item.descricao} <div className="valor"> {item.valor} </div></div> </ul>
       </div>
     })

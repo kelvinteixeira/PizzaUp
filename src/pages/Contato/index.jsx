@@ -14,7 +14,7 @@ export default function Contato() {
   }
 
   const openWhatsapp = () => {
-    window.open('https://web.whatsapp.com/send?phone=5583998506482')
+    window.open('https://api.whatsapp.com/send?phone=5583998506482')
   }
 
   return (

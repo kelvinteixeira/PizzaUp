@@ -133,3 +133,16 @@ option:disabled {
 .card-button:hover {
   color: #fff;
 }
+
+.pedido-confirmacao {
+  color: white;
+  font-size: 12px;
+  border-radius: 8px;
+  margin: 5px;
+  padding: 5px;
+  background-color: #00000025;
+}
+
+.container-pedido {
+  margin: 5px;
+}
