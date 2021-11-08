@@ -53,7 +53,7 @@
 
 .card-titulo {
   text-align: center;
-  font-size: 24px;
+  font-size: 21px;
   margin: 26px;
   font-weight: bold;
   color: white;
@@ -73,6 +73,11 @@
   margin: 0 20px 10px 26px;
   color: #ffb001;
   font-weight: bold;
+}
+
+.coluna {
+  display: flex;
+  flex-direction: column;
 }
 
 .descricao {

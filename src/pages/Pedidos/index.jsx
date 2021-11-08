@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
@@ -38,32 +39,30 @@ export default function Pedidos() {
 
   const getBordas = () => {
     return bordas.map(item => {
-      return <option> {item.nome} </option>
+      return <option key={item.id} > {item.nome} </option>
     })
   }
 
+ 
+
   const tipoPizza = () => {
-    if (tipo === '1sabor') {
-      return <select value={sabor} onChange={e => setSabor(e.target.value)} className="campo" >
-        <option selected disabled value="" > Escolha o sabor </option>
+    if (tipo === 'Um sabor') {
+      return <select defaultValue={'default'} onChange={e => setSabor(e.target.value)} className="campo" >
+        <option value="default" > Escolha o sabor </option>
         {getPizzas()}
       </select>
-    } else if (tipo === '2sabores') {
+    } if (tipo === 'Dois sabores') {
       return <div>
-        < select value={sabor} onChange={e => setSabor(e.target.value)} className="campo" >
-          <option selected disabled value="" > Primeiro sabor </option>
+        < select defaultValue={'default'} onChange={e => setSabor(e.target.value)} className="campo" >
+          <option value="default" > Primeiro sabor </option>
           {getPizzas()}
         </select>
-        <select value={sabor2} onChange={e => setSabor2(e.target.value)} className="campo" >
-          <option selected disable value="" > Segundo sabor </option>
+        <select defaultValue={'default'} onChange={e => setSabor2(e.target.value)} className="campo" >
+          <option value="default" > Segundo sabor </option>
           {getPizzas()}
         </select>
       </div>
     }
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
   }
 
   return (
@@ -75,13 +74,13 @@ export default function Pedidos() {
             <h1 className="card-titulo">Informações do pedido</h1>
             <div className="card-content">
               <label htmlFor="tipo">Tipo de pizza</label>
-              <select value={tipo} onChange={e => {
+              <select defaultValue={'default'} onChange={e => {
                 setTipo(e.target.value)
                 setShow(show)
               }} className="campo" name="tipo">
-                <option selected disabled value="">Selecione</option>
-                <option value="1sabor">1 sabor</option>
-                <option value="2sabores" >2 sabores</option>
+                <option value="default">Selecione</option>
+                <option value="Um sabor">1 sabor</option>
+                <option value="Dois sabores" >2 sabores</option>
               </select>
 
               <div>
@@ -90,29 +89,29 @@ export default function Pedidos() {
 
 
               <label htmlFor="tamanho">Tamanho</label>
-              <select value={tamanho} onChange={e => setTamanho(e.target.value)} className="campo">
-                <option selected disabled value="">Selecione</option>
-                <option value="pequena">Pequena</option>
-                <option value="media">Média</option>
-                <option value="grande">Grande</option>
+              <select defaultValue={'default'} onChange={e => setTamanho(e.target.value)} className="campo">
+                <option value="default">Selecione</option>
+                <option value="Pequena">Pequena</option>
+                <option value="Média">Média</option>
+                <option value="Grande">Grande</option>
               </select>
 
               <label htmlFor="borda">Tipo de borda</label>
-              <select value={borda} onChange={e => setBorda(e.target.value)} className="campo">
-                <option selected disabled value="">Selecione</option>
+              <select defaultValue={'default'} onChange={e => setBorda(e.target.value)} className="campo">
+                <option value="default">Selecione</option>
                 {getBordas()}
               </select>
 
               <label htmlFor="refrigerante">Adicionar refrigerante</label>
-              <select value={refrigerante} onChange={e => setRefrigerante(e.target.value)} className="campo">
-                <option selected disabled value="">Selecione</option>
+              <select defaultValue={'default'} onChange={e => setRefrigerante(e.target.value)} className="campo">
+                <option value="default">Selecione</option>
                 {getRefrigerantes()}
               </select>
 
               <label htmlFor="obs">Observações</label>
               <input value={obs} onChange={e => setObs(e.target.value)} type="text" className="campo" placeholder="ex: não colocar cebolas..."></input>
 
-              <button className="card-button" type="submit" onClick={handleSubmit}>Adicionar ao carrinho</button>
+              <button className="card-button" type="button">Adicionar ao carrinho</button>
 
             </div>
           </div>
@@ -138,7 +137,7 @@ export default function Pedidos() {
               <label htmlFor="referencia">Ponto de referência</label>
               <input type="text" value={referencia} onChange={e => setReferencia(e.target.value)} autoComplete='off' className="campo" id="referencia" placeholder="ex: próximo ao supermecado..."></input>
 
-              <button className="card-button" type="submit" onClick={handleSubmit}>Adicionar informações</button>
+              <button className="card-button" type="submit">Adicionar informações</button>
             </div>
           </div>
         </form>
