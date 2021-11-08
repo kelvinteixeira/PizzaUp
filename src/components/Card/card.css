@@ -27,12 +27,27 @@
   flex-direction: column;
 }
 
+.error-card {
+  padding: 3px;
+  width: auto;
+  height: auto;
+  background-color: #6b2d2d99;
+  border-radius: 8px;
+  transition: ease-in-out 0.4s;
+  box-shadow: 1px 2px 5px 3px;
+  font-weight: bold;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent; 
 }
 
 .card:hover {
+  background-color: #46202099;
+}
+
+.error-card:hover {
   background-color: #46202099;
 }
 
@@ -107,6 +122,7 @@ option:disabled {
   background-color: #6e0f0f;
   color: #ffb001;
   transition: ease-in-out 0.4s;
+  cursor: pointer;
 }
 
 .card-button:hover {
